@@ -30,13 +30,14 @@ Start by reading:
 5. `state/decision_log.md` if it exists
 6. `state/source_index.md` if it exists
 
-If `RESEARCH_BRIEF.md` is missing, copy or summarize
+If `RESEARCH_BRIEF.md` is missing and the user explicitly asks to initialize the
+project, create `RESEARCH_BRIEF.md` from
+`templates/RESEARCH_BRIEF.template.md` without filling unknown facts, then stop
+and list the fields that need user input.
+
+If `RESEARCH_BRIEF.md` is missing for any other request, copy or summarize
 `templates/RESEARCH_BRIEF.template.md`, list the missing fields, and stop. Do
 not invent the research problem.
-
-If the user explicitly asks to initialize the project, create
-`RESEARCH_BRIEF.md` from the template without filling unknown facts, then stop
-and list the fields that need user input.
 
 ## Project Files
 

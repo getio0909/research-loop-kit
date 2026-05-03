@@ -33,7 +33,9 @@ Do not use this skill for one-off factual answers that need no persistent state.
 8. Execute or design the action within the brief's constraints.
 9. Evaluate against the brief's metrics and prior best result.
 10. Update state and save artifacts.
-11. End with the next concrete iteration target.
+11. Verify referenced artifacts, checks, and unsupported claims before
+    completing the iteration.
+12. End with the next concrete iteration target.
 
 ## Templates
 
@@ -61,4 +63,3 @@ Return a short iteration report with:
 - artifacts,
 - state updates,
 - next iteration.
-

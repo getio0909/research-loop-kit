@@ -48,7 +48,7 @@ one huge file. This kit separates those concerns:
 
 ## Core Loop
 
-Each iteration follows nine steps:
+Each iteration follows ten steps:
 
 1. Load the research brief and prior state.
 2. Restate the objective as measurable success criteria.
@@ -58,7 +58,9 @@ Each iteration follows nine steps:
 6. Execute only within the user's constraints.
 7. Evaluate against the success metrics.
 8. Persist decisions, open questions, and reusable lessons.
-9. Produce the next concrete iteration plan.
+9. Verify referenced artifacts, checks, and unsupported claims before
+   completing the iteration.
+10. Produce the next concrete iteration plan.
 
 ## Design Principles
 
