@@ -50,7 +50,7 @@ while IFS= read -r -d '' file; do
   if LC_ALL=C grep -n '[^ -~[:space:]]' "$file" >> "$tmp"; then
     :
   fi
-done < <(find "$root" -type f \
+done < <(find "$root" -path "$root/.git" -prune -o -type f \
   ! -path "$root/README.zh-CN.md" \
   ! -path "$root/scripts/verify.sh" \
   -print0)
