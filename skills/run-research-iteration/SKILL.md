@@ -32,8 +32,8 @@ Do not use this skill for one-off factual answers that need no persistent state.
 7. Select the smallest action that can change the next decision.
 8. Execute or design the action within the brief's constraints.
 9. Evaluate against the brief's metrics and prior best result.
-10. Update state and save artifacts.
-11. Verify referenced artifacts, checks, and unsupported claims before
+10. Update state and save artifacts, including provenance for reusable outputs.
+11. Verify referenced artifacts, checks, data provenance, and unsupported claims before
     completing the iteration.
 12. End with the next concrete iteration target.
 
@@ -43,6 +43,8 @@ Do not use this skill for one-off factual answers that need no persistent state.
 - Use `templates/ITERATION_REPORT.template.md` for the final report.
 - Use `templates/EVIDENCE_NOTE.template.md` for source review.
 - Use `templates/EXPERIMENT_CARD.template.md` for experiments or benchmarks.
+- Use `templates/PROVENANCE.template.md` for final reports, quantitative
+  findings, benchmark results, or reusable artifacts.
 
 ## Quality Gates
 
@@ -50,6 +52,10 @@ Do not use this skill for one-off factual answers that need no persistent state.
 - No invented domain facts.
 - No destructive actions unless allowed by the brief.
 - No completion claim until artifacts and state updates are verified.
+- No synthetic, simulated, mock, random, or example data may support a research
+  conclusion unless the brief explicitly allows it.
+- Optimization claims require a baseline, comparable budget or environment, and
+  a retained result log.
 - Negative results must be recorded if they change future decisions.
 
 ## Output

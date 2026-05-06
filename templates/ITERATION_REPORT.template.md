@@ -32,6 +32,13 @@
 - Parameters:
 - Artifacts:
 
+## Data Integrity
+
+- Data sources used:
+- Provenance artifact:
+- Synthetic, simulated, mock, or smoke-test data used:
+- Unsupported claims removed or downgraded:
+
 ## Results
 
 - Primary metric:
@@ -56,4 +63,3 @@
 - Next target:
 - Rationale:
 - Minimum verification:
-

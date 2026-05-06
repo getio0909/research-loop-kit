@@ -50,6 +50,8 @@ not invent the research problem.
 - `state/source_index.md`: reviewed sources, data, and relevance.
 - `templates/`: reusable formats for briefs, reports, evidence notes, and
   experiment cards.
+- `templates/PROVENANCE.template.md`: source accounting and verification
+  status for reusable outputs.
 - `artifacts/`: durable outputs such as reports, plots, tables, configs,
   scripts, logs, and exported notes.
 
@@ -96,6 +98,30 @@ If the work is blocked by missing inputs, unavailable data, missing tools, or a
 forbidden action, do not improvise. Record the blocker, the exact missing
 requirement, and the smallest next action that would unblock the research.
 
+For substantial or resumable work, create an artifact directory under
+`artifacts/` with a short slug or iteration ID. Keep the plan, raw notes,
+result logs, and provenance in that directory instead of relying on chat
+history. For narrow iterations, a state update or compact report is enough.
+
+## Periodic Review
+
+Run a lightweight research health check when any of these are true:
+
+- five iterations have completed since the last review;
+- the research brief, success criteria, data source, or constraints changed;
+- the leaderboard has not improved for three comparable attempts;
+- open questions or blockers are accumulating;
+- the user explicitly asks for a review.
+
+During review:
+
+1. Re-read `RESEARCH_BRIEF.md` and relevant `state/` files.
+2. Check whether current work still matches the brief.
+3. Identify stale assumptions, obsolete decisions, and unresolved blockers.
+4. Update `state/decision_log.md`, `state/open_questions.md`, and
+   `state/leaderboard.md` only where evidence supports a change.
+5. End with one concrete recommendation for the next iteration.
+
 ## Evidence Rules
 
 - Cite sources for external claims.
@@ -111,18 +137,38 @@ requirement, and the smallest next action that would unblock the research.
 - Do not claim that a method improved unless it is compared against the relevant
   prior result, baseline, or decision criterion from the brief.
 
+## Data Integrity Rules
+
+- Use only data sources explicitly allowed by `RESEARCH_BRIEF.md`, user
+  messages, local files, cited sources, or verified tool output.
+- Every dataset-backed result must record source path or URL, acquisition
+  method, version or snapshot, filters or splits, and the command or artifact
+  path that produced the result.
+- Synthetic, simulated, random, mock, or example data must not support research
+  conclusions unless the brief explicitly allows that evidence type. If used
+  only to check code paths, label it `SMOKE TEST ONLY` and exclude it from
+  leaderboard entries, best-current answers, and claims of improvement.
+- If real data access is missing, blocked, stale, or forbidden, switch to a
+  data-requirements or blocked result. Do not fabricate metrics, tables,
+  plots, datasets, or experiment outcomes.
+- Distinguish `reported by source`, `computed in this run`, `inferred`, and
+  `blocked` when reporting quantitative or data-backed findings.
+
 ## Execution Rules
 
 - Keep changes minimal and scoped to the current iteration.
+- Every changed file must trace back to the current objective or acceptance
+  criteria. Mention unrelated issues in state or the final report instead of
+  editing them opportunistically.
 - Do not run destructive operations unless the research brief explicitly allows
   them and the user request confirms the scope.
 - Do not train, scrape, spend money, contact people, or access sensitive data
   unless the brief permits it.
-- Do not use simulated, random, mock, or example data to support a research
-  conclusion unless the brief explicitly allows that kind of evidence. If such
-  data is used only for a smoke test, label it as a smoke test.
 - Do not turn missing data, missing tools, or failed experiments into invented
   results. Record the failure and the next repair.
+- For optimization or benchmark work, establish or identify a baseline before
+  claiming progress. Keep budgets, metrics, and environments comparable, and
+  record failed or discarded attempts when they affect future decisions.
 - When code is modified, run the smallest relevant verification first, then a
   broader check if available.
 - Save commands, parameters, data versions, and result paths needed to reproduce
@@ -140,6 +186,9 @@ requirement, and the smallest next action that would unblock the research.
   useful in later iterations.
 - Save bulky or generated outputs under `artifacts/`, preferably under a
   dated or iteration-specific subdirectory.
+- For final reports, quantitative findings, benchmarks, or outputs likely to be
+  reused, save a provenance note using `templates/PROVENANCE.template.md` or an
+  equivalent structure.
 
 Every persisted entry should state what changed, why it matters, and where the
 supporting evidence lives.

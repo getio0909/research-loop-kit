@@ -45,3 +45,9 @@ Completion requires mapping the user's request to real artifacts and verifying
 the files or command outputs. A passing script is useful only if the script
 covers the requested deliverables.
 
+## 8. Preserve Data Integrity
+
+Research outputs should prefer raw evidence, result logs, and provenance over
+polished summaries. Synthetic or simulated data can be useful for smoke tests,
+but it must not support conclusions unless the brief explicitly permits it.
+Benchmark claims need a baseline, comparable conditions, and retained artifacts.

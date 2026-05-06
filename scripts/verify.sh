@@ -13,6 +13,7 @@ templates/RESEARCH_BRIEF.template.md
 templates/ITERATION_REPORT.template.md
 templates/EVIDENCE_NOTE.template.md
 templates/EXPERIMENT_CARD.template.md
+templates/PROVENANCE.template.md
 skills/run-research-iteration/SKILL.md
 examples/RESEARCH_BRIEF.example.md
 "

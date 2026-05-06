@@ -26,10 +26,13 @@
 ## 4. Inputs
 
 - Data sources:
+- Permitted data sources:
+- Data access method:
 - Literature sources:
 - Existing notes:
 - Existing code or tools:
 - Baselines to compare against:
+- Synthetic, simulated, mock, or example data policy:
 
 ## 5. Constraints
 
@@ -59,4 +62,3 @@
 - Unknowns that must be resolved:
 - Assumptions allowed for the first iteration:
 - Decisions deferred until later:
-

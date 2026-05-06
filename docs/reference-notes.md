@@ -58,6 +58,29 @@ patterns and constraints, not copied as full prompt bodies.
   - Useful pattern: cross-agent skills can cover development, security,
     design, compliance, and research-like workflows when written portably.
 
+- forrestchang/andrej-karpathy-skills CLAUDE.md:
+  https://github.com/forrestchang/andrej-karpathy-skills/blob/main/CLAUDE.md
+  - Useful pattern: keep edits surgical, tie changed lines to the task, and
+    record unrelated findings instead of opportunistically changing them.
+
+- karpathy/autoresearch:
+  https://github.com/karpathy/autoresearch
+  - Useful pattern: autonomous research loops need an explicit baseline, a
+    fixed comparable budget, one clear metric, keep/discard/crash outcomes,
+    and raw result logs rather than polished summaries alone.
+
+- getcompanion-ai/feynman:
+  https://github.com/getcompanion-ai/feynman
+  - Useful pattern: durable research workflows benefit from slugged artifact
+    paths, plan artifacts, provenance sidecars, source verification, and
+    explicit `blocked` or `unverified` status when checks cannot be completed.
+
+- bytedance/deer-flow:
+  https://github.com/bytedance/deer-flow
+  - Useful pattern: long-horizon agent systems should offload context to the
+    filesystem, load skills progressively, separate setup health checks from
+    execution, and keep sandbox or host execution boundaries explicit.
+
 ## Source Selection Notes
 
 - Preference went to official docs, public GitHub repositories, and

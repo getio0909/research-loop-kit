@@ -18,6 +18,7 @@ one huge file. This kit separates those concerns:
 - `templates/RESEARCH_BRIEF.template.md` captures domain-specific input.
 - `templates/*` keeps repeatable artifacts short and scannable.
 - `state/` stores long-running memory.
+- `artifacts/` stores reports, plans, result logs, and provenance sidecars.
 - `skills/run-research-iteration/SKILL.md` shows how to package the loop as a
   reusable skill.
 
@@ -62,6 +63,17 @@ Each iteration follows ten steps:
    completing the iteration.
 10. Produce the next concrete iteration plan.
 
+## Research Integrity
+
+- Final or reusable outputs should include provenance: sources accepted or
+  rejected, data versions, commands, raw artifact paths, and verification state.
+- Synthetic, simulated, mock, random, or example data can be used for smoke
+  tests only unless the brief explicitly allows it as evidence.
+- Optimization work should start from a baseline and compare results under a
+  fixed budget or otherwise comparable conditions.
+- Substantial or resumable work should externalize plans and raw notes under
+  `artifacts/` instead of relying on chat history.
+
 ## Design Principles
 
 - Keep the base prompt domain-neutral.
@@ -87,7 +99,8 @@ research-loop-kit/
 |   |-- RESEARCH_BRIEF.template.md
 |   |-- ITERATION_REPORT.template.md
 |   |-- EVIDENCE_NOTE.template.md
-|   `-- EXPERIMENT_CARD.template.md
+|   |-- EXPERIMENT_CARD.template.md
+|   `-- PROVENANCE.template.md
 |-- skills/
 |   `-- run-research-iteration/
 |       `-- SKILL.md

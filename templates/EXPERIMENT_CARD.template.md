@@ -10,11 +10,15 @@
 - Question this experiment answers:
 - Acceptance criteria:
 - Prior baseline:
+- Metric direction:
+- Fixed budget or comparable condition:
 
 ## Design
 
 - Method:
 - Inputs:
+- Data provenance:
+- Synthetic, simulated, mock, or smoke-test data policy:
 - Outputs:
 - Variables:
 - Controls:
@@ -28,12 +32,15 @@
 - Parameters:
 - Runtime:
 - Artifact paths:
+- Verification command:
 
 ## Results
 
 | Metric | Baseline | Result | Delta | Pass |
 |---|---:|---:|---:|---|
 |  |  |  |  |  |
+
+- Status: keep, discard, crash, blocked, or inconclusive
 
 ## Interpretation
 
@@ -46,4 +53,3 @@
 - Exact command:
 - Required files:
 - Known caveats:
-
