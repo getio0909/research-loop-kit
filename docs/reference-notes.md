@@ -1,91 +1,29 @@
-# Reference Notes
+# Design References
 
-These sources influenced the structure of ResearchLoop Kit. They were used for
-patterns and constraints, not copied as full prompt bodies.
+These public sources led to concrete choices in ResearchLoop Kit.
 
-## OpenAI Official Sources
+| Source | Choice adopted here |
+|---|---|
+| [OpenAI prompt engineering guide](https://developers.openai.com/api/docs/guides/prompt-engineering) | Explicit instructions, structured outputs, and verification. |
+| [OpenAI Codex agent guidance](https://developers.openai.com/codex/guides/agents-sdk) | Scoped handoffs and reviewable artifacts for longer work. |
+| [Anthropic skill development guide](https://github.com/anthropics/claude-code/blob/main/plugins/plugin-dev/skills/skill-development/SKILL.md) | Lean skill files and progressive disclosure. |
+| [Superpowers writing-skills](https://github.com/obra/superpowers/blob/main/skills/writing-skills/SKILL.md) | Trigger-focused skill descriptions and shared references. |
+| [karpathy/autoresearch](https://github.com/karpathy/autoresearch) | Baseline-first optimization, comparable budgets, and retained failed runs. |
+| [getcompanion-ai/feynman](https://github.com/getcompanion-ai/feynman) | Slugged artifacts, source checks, provenance, and explicit blocked states. |
+| [bytedance/deer-flow](https://github.com/bytedance/deer-flow) | Filesystem checkpoints, progressive context loading, and execution boundaries. |
 
-- OpenAI prompt engineering guide:
-  https://developers.openai.com/api/docs/guides/prompt-engineering
-  - Useful pattern: role clarity, structured tool use, testing, Markdown
-    standards, and long-running agent prompts that emphasize planning,
-    persistence, preambles, and task tracking.
+The kit keeps these decisions:
 
-- OpenAI Codex multi-agent workflows:
-  https://developers.openai.com/codex/guides/agents-sdk
-  - Useful pattern: deterministic, reviewable workflows with scoped agents,
-    handoffs, guardrails, and traceable artifacts.
+- one iteration by default, with explicit authorization for goal mode;
+- a baseline before an optimization claim;
+- a durable checkpoint after every goal-mode iteration;
+- clear separation between source reports, observations, computed results, and
+  assumptions;
+- provenance and useful negative results;
+- smoke-test-only treatment of synthetic data unless the brief permits it as
+  evidence.
 
-- OpenAI Agents SDK session memory cookbook:
-  https://developers.openai.com/cookbook/examples/agents_sdk/session_memory
-  - Useful pattern: summarize old context, keep recent turns intact, preserve
-    milestones, contradictions, timestamps, tool insights, and hallucination
-    controls.
-
-## Public GitHub And Skill Sources
-
-- Discovery snapshot on 2026-05-03:
-  - `anthropics/claude-code`: 120074 GitHub stars.
-  - `obra/superpowers`: 177154 GitHub stars.
-  - `PatrickJS/awesome-cursorrules`: 39362 GitHub stars.
-  - `secondsky/claude-skills`: 132 GitHub stars, 170 skills described in
-    repository metadata and README search snippets.
-  - `simota/agent-skills`: 31 GitHub stars, 100+ cross-agent skills described
-    in repository metadata and README search snippets.
-
-- Anthropic Claude Code skill development guide:
-  https://github.com/anthropics/claude-code/blob/main/plugins/plugin-dev/skills/skill-development/SKILL.md
-  - Useful pattern: `SKILL.md` frontmatter, optional `scripts/`,
-    `references/`, `assets/`, and progressive disclosure.
-
-- Superpowers writing-skills:
-  https://github.com/obra/superpowers/blob/main/skills/writing-skills/SKILL.md
-  - Useful pattern: skill descriptions should describe trigger conditions, not
-    summarize the workflow; heavy references should move out of the main skill.
-
-- Awesome Cursor Rules:
-  https://github.com/PatrickJS/awesome-cursorrules
-  - Useful pattern: project-specific AI rules can align teams, encode local
-    conventions, and improve context awareness.
-
-- secondsky/claude-skills:
-  https://github.com/secondsky/claude-skills
-  - Useful pattern: many small, focused skills are easier to scan and reuse
-    than one monolithic prompt.
-
-- simota/agent-skills:
-  https://github.com/simota/agent-skills
-  - Useful pattern: cross-agent skills can cover development, security,
-    design, compliance, and research-like workflows when written portably.
-
-- forrestchang/andrej-karpathy-skills CLAUDE.md:
-  https://github.com/forrestchang/andrej-karpathy-skills/blob/main/CLAUDE.md
-  - Useful pattern: keep edits surgical, tie changed lines to the task, and
-    record unrelated findings instead of opportunistically changing them.
-
-- karpathy/autoresearch:
-  https://github.com/karpathy/autoresearch
-  - Useful pattern: autonomous research loops need an explicit baseline, a
-    fixed comparable budget, one clear metric, keep/discard/crash outcomes,
-    and raw result logs rather than polished summaries alone.
-
-- getcompanion-ai/feynman:
-  https://github.com/getcompanion-ai/feynman
-  - Useful pattern: durable research workflows benefit from slugged artifact
-    paths, plan artifacts, provenance sidecars, source verification, and
-    explicit `blocked` or `unverified` status when checks cannot be completed.
-
-- bytedance/deer-flow:
-  https://github.com/bytedance/deer-flow
-  - Useful pattern: long-horizon agent systems should offload context to the
-    filesystem, load skills progressively, separate setup health checks from
-    execution, and keep sandbox or host execution boundaries explicit.
-
-## Source Selection Notes
-
-- Preference went to official docs, public GitHub repositories, and
-  independently inspectable markdown files.
-- Leaked or proprietary system prompt collections were not used as source
-  material.
-- Star counts and repository descriptions can change; treat them as discovery
-  signals, not design authority.
+Prefer official documentation, primary sources, public repositories, and files
+that another maintainer can inspect. Do not use leaked or proprietary prompt
+collections. Repository statistics and search snippets can help discovery, but
+they are not design authority.

@@ -4,9 +4,10 @@
 
 - Brief version: 1
 - Project name:
+- Research series ID:
 - Domain:
-- Research owner:
 - Current date basis:
+- Execution mode: single iteration
 - Expected iteration length:
 
 ## 2. Research Question
@@ -26,12 +27,10 @@
 
 ## 4. Inputs
 
-- Data sources:
-- Permitted data sources:
-- Data access method:
-- Literature sources:
-- Existing notes:
-- Existing code or tools:
+- Available local inputs:
+- Permitted external sources:
+- Access method:
+- Existing notes or code:
 - Baselines to compare against:
 - Synthetic, simulated, mock, or example data policy:
 
@@ -56,10 +55,18 @@
 - Main deliverable:
 - Supporting artifacts:
 - Where artifacts should be saved:
-- Who will use the results:
+- Intended audience or role:
 
 ## 8. Open Questions
 
 - Unknowns that must be resolved:
 - Assumptions allowed for the first iteration:
 - Decisions deferred until later:
+
+## 9. Goal Mode (Optional)
+
+Complete this section only when execution mode is `goal`.
+
+- Maximum iterations:
+- Authorization review or expiry condition:
+- Checkpoint or review cadence:

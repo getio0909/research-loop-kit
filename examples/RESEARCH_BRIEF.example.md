@@ -2,10 +2,12 @@
 
 ## 1. Research Identity
 
+- Brief version: 1
 - Project name: Low-cost indoor air quality sensing review
+- Research series ID: indoor-air-sensor-review
 - Domain: Environmental sensing
-- Research owner: Example user
 - Current date basis: Use the current system date
+- Execution mode: Single iteration
 - Expected iteration length: 1 to 2 hours
 
 ## 2. Research Question
@@ -32,13 +34,11 @@
 
 ## 4. Inputs
 
-- Data sources: Public datasheets and peer-reviewed comparison studies.
-- Permitted data sources: Public manufacturer pages, public datasheets,
+- Available local inputs: None.
+- Permitted external sources: Public manufacturer pages, public datasheets,
   peer-reviewed papers, and reproducible public benchmarks.
-- Data access method: Web research and downloaded public documents only.
-- Literature sources: Papers, manufacturer docs, and reproducible benchmarks.
-- Existing notes: None.
-- Existing code or tools: None.
+- Access method: Web research and downloaded public documents only.
+- Existing notes or code: None.
 - Baselines to compare against: Reference-grade particle counters where papers
   provide comparisons.
 - Synthetic, simulated, mock, or example data policy: Not allowed for sensor
@@ -66,10 +66,14 @@
 - Main deliverable: Ranked shortlist.
 - Supporting artifacts: Evidence notes and comparison table.
 - Where artifacts should be saved: `artifacts/`
-- Who will use the results: Prototype builder.
+- Intended audience or role: Prototype builder.
 
 ## 8. Open Questions
 
 - Unknowns that must be resolved: Which sensors are currently available.
 - Assumptions allowed for the first iteration: North America availability.
 - Decisions deferred until later: Final enclosure and firmware design.
+
+## 9. Goal Mode (Optional)
+
+Not used in this single-iteration example.

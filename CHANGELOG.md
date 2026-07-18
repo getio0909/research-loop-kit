@@ -5,6 +5,32 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+
+- Goal mode for explicitly authorized multi-iteration work, with limits and
+  resumable checkpoints.
+- Goal state tracking for authorization, limits, stable IDs, status, and safe
+  retries of external actions.
+- Checks for likely secrets and local or runtime-specific metadata without
+  printing matched content.
+
+### Changed
+
+- Replaced the ten-step loop with a simpler eight-phase workflow.
+- Made initialization idempotent and tightened skill and repository checks.
+- Simplified design documentation and removed project-specific source history.
+- Hardened CI with pinned actions, read-only permissions, ShellCheck, and a
+  timeout.
+
+### Fixed
+
+- Corrected current Codex and Claude Code launch instructions.
+- Prevented Quick Start and the initialization skill from overwriting an
+  existing research brief.
+- Aligned the agent instructions, READMEs, bundled skill, and templates.
+
 ## [0.2.0] - 2026-06-02
 
 ### Added

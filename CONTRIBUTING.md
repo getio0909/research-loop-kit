@@ -16,6 +16,10 @@ Thank you for your interest. This project is intentionally small and easy to aud
 - Move domain-specific content into templates or the research brief.
 - Prefer evidence and acceptance gates over motivational wording.
 - Keep templates short and scannable.
+- Keep the eight loop phases and goal-mode contract aligned across the agent
+  instructions, READMEs, and bundled skill.
+- Do not commit private prompts, raw conversations, credentials, personal data,
+  internal runtime identifiers, or machine-specific paths.
 - Run `bash scripts/verify.sh` to catch structural problems.
 
 ## Reporting Issues

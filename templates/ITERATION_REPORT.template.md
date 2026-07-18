@@ -1,6 +1,7 @@
 # Iteration Report
 
-- Iteration:
+- Research series ID:
+- Iteration ID:
 - Date:
 - Research question:
 - Iteration objective:
@@ -19,16 +20,16 @@
 |---|---|---|---|---|
 |  |  |  |  |  |
 
-## Hypotheses
+## Tests Or Decision Alternatives
 
-| Hypothesis | Verification method | Result | Decision |
+| Hypothesis, alternative, or uncertainty | Verification method | Result | Decision |
 |---|---|---|---|
 |  |  |  |  |
 
 ## Work Performed
 
 - Actions:
-- Commands or tools:
+- Public reproducibility commands or methods:
 - Parameters:
 - Artifacts:
 
@@ -46,6 +47,13 @@
 - Comparison to prior best:
 - Interpretation:
 
+## Verification
+
+- Checks run:
+- Result:
+- Checks not run and reason:
+- Goal status after this iteration, if applicable:
+
 ## Risks And Gaps
 
 - Unverified assumptions:
@@ -60,6 +68,7 @@
 
 ## Next Iteration
 
-- Next target:
+- Next target, or none for a terminal status:
+- Terminal reason, if applicable:
 - Rationale:
 - Minimum verification:

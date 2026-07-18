@@ -1,53 +1,47 @@
 # Design Principles
 
-This project distills the current repository's domain-heavy research prompt
-into a domain-neutral framework.
+ResearchLoop Kit favors auditability over autonomy for its own sake. A useful
+iteration should change a decision, leave evidence, and be easy to resume.
 
-## 1. Separate Stable Workflow From Variable Domain Input
+## Keep The Workflow Stable And The Brief Variable
 
-The original project prompt contains useful research machinery, but it binds the
-agent to renewable power forecasting, specific hosts, specific metrics, and
-specific file names. ResearchLoop Kit keeps the stable loop in `AGENTS.md` and
-moves domain facts into `RESEARCH_BRIEF.md`.
+`AGENTS.md` holds the reusable workflow. `RESEARCH_BRIEF.md` holds the domain,
+question, data access, metrics, limits, and deliverables. If a rule changes from
+project to project, it belongs in the brief or project state.
 
-## 2. Use Progressive Disclosure
+## Make One Decision At A Time
 
-The base prompt should be short enough to inspect quickly. Detailed formats live
-in templates. Long references live in `docs/` or `state/`. The agent loads them
-only when the task needs them.
+An iteration should have one measurable objective and the smallest action that
+can change the next decision. Large plans are useful only when each step still
+produces a checkpoint or a documented negative result.
 
-## 3. Make Research Falsifiable
+## Put Evidence Before Claims
 
-Each iteration must state acceptance criteria, hypotheses, verification methods,
-and evidence type. This prevents the agent from producing impressive but
-non-actionable summaries.
+External claims need sources. Data and experiments need provenance, comparable
+conditions, and reproducible methods. A polished summary is not a substitute
+for raw results or verification.
 
-## 4. Preserve Useful Memory Without Hoarding Context
+## Use State As A Checkpoint, Not A Transcript
 
-Persist only decisions, open questions, best results, source indexes, and
-iteration summaries. Avoid storing every intermediate thought. State files
-should help the next iteration start faster.
+Keep decisions, open questions, best results, source indexes, and short
+iteration summaries. Do not save every intermediate thought or copy chat
+history. State should help the next agent start quickly without exposing
+private context.
 
-## 5. Prefer Small Iterations
+## Treat Goal Mode As Explicit Authorization
 
-Long-running research succeeds by reducing uncertainty one step at a time.
-Every iteration should produce at least one durable artifact or decision.
+Single-iteration execution is the default. Goal mode needs a clear stop
+condition, applicable limits, stable IDs, and a checkpoint after every
+iteration. Runtime goal features may carry status but never expand permission.
 
-## 6. Keep Skills Lean
+## Keep Published Artifacts Portable
 
-The example skill uses a precise trigger, a short workflow, and references to
-templates. It does not duplicate all project documentation. A skill should teach
-the non-obvious procedure, not become a second README.
+Use repository-relative paths, public reproducibility methods, and redacted
+environment descriptions. Apply the artifact-safety and provenance checks
+before publishing.
 
-## 7. Audit Before Claiming Completion
+## Keep The Kit Small
 
-Completion requires mapping the user's request to real artifacts and verifying
-the files or command outputs. A passing script is useful only if the script
-covers the requested deliverables.
-
-## 8. Preserve Data Integrity
-
-Research outputs should prefer raw evidence, result logs, and provenance over
-polished summaries. Synthetic or simulated data can be useful for smoke tests,
-but it must not support conclusions unless the brief explicitly permits it.
-Benchmark claims need a baseline, comparable conditions, and retained artifacts.
+Skills should point to shared templates instead of copying them. Checks should
+catch real contract drift without becoming a second implementation of the
+workflow. When a rule can be stated once and referenced elsewhere, do that.

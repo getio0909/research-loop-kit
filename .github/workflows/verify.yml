@@ -6,9 +6,21 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: read
+
 jobs:
   verify:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v4
-      - run: bash scripts/verify.sh
+      - name: Check out repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+      - name: Check shell syntax
+        run: bash -n scripts/verify.sh
+      - name: Run ShellCheck
+        run: shellcheck scripts/verify.sh
+      - name: Verify public repository contracts
+        run: bash scripts/verify.sh

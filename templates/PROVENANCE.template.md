@@ -11,7 +11,7 @@
 - Sources consulted:
 - Sources accepted:
 - Sources rejected:
-- Source index path:
+- Source index repository-relative path:
 
 ## Data Accounting
 
@@ -23,9 +23,9 @@
 
 ## Reproducibility
 
-- Commands:
+- Public reproducibility commands or methods:
 - Parameters:
-- Environment:
+- Portable environment summary:
 - Raw artifacts:
 - Result logs:
 
@@ -40,3 +40,10 @@
 - Missing evidence:
 - Failed checks:
 - Next action:
+
+## Publication Safety
+
+- Prompt or transcript content removed:
+- Secrets, personal data, and private endpoints removed:
+- Absolute local paths and machine identity removed:
+- Internal runtime identifiers replaced with public method descriptions:

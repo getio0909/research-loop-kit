@@ -1,9 +1,9 @@
 # Evidence Note
 
 - Title:
-- Source URL or local path:
+- Public source URL or repository-relative path:
 - Source type:
-- Author or owner:
+- Author or organization:
 - Published or updated date:
 - Accessed date:
 - Research question addressed:
@@ -36,4 +36,3 @@ Write three to five bullet points. Separate facts from interpretation.
 
 - Short citation:
 - Link:
-

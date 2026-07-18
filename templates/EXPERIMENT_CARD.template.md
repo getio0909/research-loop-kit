@@ -2,8 +2,7 @@
 
 - Experiment ID:
 - Date:
-- Owner:
-- Related hypothesis:
+- Related hypothesis, alternative, or uncertainty:
 
 ## Goal
 
@@ -27,8 +26,8 @@
 
 ## Execution
 
-- Environment:
-- Command:
+- Portable environment summary:
+- Public reproducibility command or method:
 - Parameters:
 - Runtime:
 - Artifact paths:
@@ -48,8 +47,7 @@
 - What it does not prove:
 - Follow-up:
 
-## Reproducibility
+## Reproducibility Notes
 
-- Exact command:
 - Required files:
 - Known caveats:
