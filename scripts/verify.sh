@@ -21,8 +21,6 @@ required_files=(
 	docs/reference-notes.md
 	examples/RESEARCH_BRIEF.example.md
 	scripts/verify.sh
-	skills/init-research-project/SKILL.md
-	skills/run-research-iteration/SKILL.md
 	templates/EVIDENCE_NOTE.template.md
 	templates/EXPERIMENT_CARD.template.md
 	templates/GOAL_STATE.template.md
@@ -35,8 +33,6 @@ required_dirs=(
 	artifacts
 	docs
 	examples
-	skills/init-research-project
-	skills/run-research-iteration
 	state
 	templates
 )
@@ -56,6 +52,10 @@ for dir in "${required_dirs[@]}"; do
 	fi
 done
 
+if [ -e "$root/skills" ] || [ -L "$root/skills" ]; then
+	fail "agent skill packages are outside the public repository boundary"
+fi
+
 if ! LC_ALL=C grep -q '^# ResearchLoop Kit' "$root/README.md"; then
 	fail "README.md missing project title"
 fi
@@ -63,34 +63,6 @@ fi
 if ! LC_ALL=C grep -q '^# ResearchLoop Kit' "$root/README.zh-CN.md"; then
 	fail "README.zh-CN.md missing project title"
 fi
-
-check_skill_frontmatter() {
-	local file="$1"
-	local expected_name="$2"
-
-	if ! LC_ALL=C awk -v expected_name="$expected_name" '
-		NR == 1 {
-			if ($0 != "---") exit 1
-			next
-		}
-		$0 == "---" {
-			closed = 1
-			exit
-		}
-		$0 == "name: " expected_name { found_name = 1 }
-		$0 ~ /^description: .+/ { found_description = 1 }
-		END {
-			if (!closed || !found_name || !found_description) exit 1
-		}
-	' "$root/$file"; then
-		fail "invalid skill frontmatter: $file"
-	fi
-}
-
-check_skill_frontmatter \
-	"skills/init-research-project/SKILL.md" "init-research-project"
-check_skill_frontmatter \
-	"skills/run-research-iteration/SKILL.md" "run-research-iteration"
 
 count_marked_phases() {
 	local file="$1"
@@ -120,7 +92,6 @@ loop_files=(
 	AGENTS.md
 	README.md
 	README.zh-CN.md
-	skills/run-research-iteration/SKILL.md
 )
 
 for file in "${loop_files[@]}"; do
@@ -140,7 +111,7 @@ if ! LC_ALL=C grep -q '^## Goal Mode$' "$root/AGENTS.md" ||
 	fail "AGENTS.md missing goal-mode or artifact-safety contract"
 fi
 
-for file in README.md README.zh-CN.md skills/run-research-iteration/SKILL.md; do
+for file in README.md README.zh-CN.md; do
 	if ! LC_ALL=C grep -q 'templates/GOAL_STATE.template.md' "$root/$file"; then
 		fail "goal-state template is not discoverable from $file"
 	fi
@@ -150,7 +121,6 @@ goal_contract_files=(
 	AGENTS.md
 	README.md
 	README.zh-CN.md
-	skills/run-research-iteration/SKILL.md
 	templates/GOAL_STATE.template.md
 )
 

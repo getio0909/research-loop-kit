@@ -14,9 +14,8 @@ ResearchLoop Kit 是一套通用 AI 研究框架，用于长期、可沉淀、�
 - `templates/*` 保存可复用的产出格式。
 - `state/` 保存长期研究记忆。
 - `artifacts/` 保存报告、计划、结果日志和溯源记录。
-- `skills/run-research-iteration/SKILL.md` 展示如何把研究循环封装成可复用技能。
 
-仓库中的技能源码统一放在 `skills/`。如果需要自动发现，请将它安装或链接到代理支持的技能目录。技能从项目根目录读取模板，不单独复制模板内容。
+代理专用技能包有意不包含在这个公开仓库中。请通过代理支持的项目指令机制直接加载 `AGENTS.md`。
 
 ## 快速开始
 
@@ -64,7 +63,7 @@ ResearchLoop Kit 是一套通用 AI 研究框架，用于长期、可沉淀、�
    bash scripts/verify.sh
    ```
 
-   该命令检查框架结构和发布安全；具体研究项目是否就绪，由初始化和迭代技能检查。
+   该命令检查框架结构和发布安全；具体研究项目是否就绪，由已填写的研究简报和 `AGENTS.md` 约定决定。
 
 ## 核心循环
 
@@ -129,9 +128,6 @@ research-loop-kit/
 |   |-- EVIDENCE_NOTE.template.md
 |   |-- EXPERIMENT_CARD.template.md
 |   `-- PROVENANCE.template.md
-|-- skills/
-|   |-- init-research-project/SKILL.md
-|   `-- run-research-iteration/SKILL.md
 |-- state/
 |-- artifacts/
 `-- scripts/verify.sh

@@ -17,7 +17,7 @@ Thank you for your interest. This project is intentionally small and easy to aud
 - Prefer evidence and acceptance gates over motivational wording.
 - Keep templates short and scannable.
 - Keep the eight loop phases and goal-mode contract aligned across the agent
-  instructions, READMEs, and bundled skill.
+  instructions and READMEs.
 - Do not commit private prompts, raw conversations, credentials, personal data,
   internal runtime identifiers, or machine-specific paths.
 - Run `bash scripts/verify.sh` to catch structural problems.

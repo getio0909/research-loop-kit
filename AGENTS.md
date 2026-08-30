@@ -38,7 +38,7 @@ Read these files when they exist:
 If `RESEARCH_BRIEF.md` is missing and the user asks to initialize the project,
 copy `templates/RESEARCH_BRIEF.template.md` without overwriting existing work,
 then list the required fields that are still blank. Do not invent the problem.
-Use `skills/init-research-project/SKILL.md` for the full initialization flow.
+Follow the initialization safeguards in this section for the full flow.
 
 For any other research request, a missing or incomplete brief is a blocker. At
 minimum it must define a brief version, research-series ID, execution mode,

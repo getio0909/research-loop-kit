@@ -19,13 +19,10 @@ one huge file. This kit separates those concerns:
 - `templates/*` keeps repeatable artifacts short and scannable.
 - `state/` stores long-running memory.
 - `artifacts/` stores reports, plans, result logs, and provenance sidecars.
-- `skills/run-research-iteration/SKILL.md` shows how to package the loop as a
-  reusable skill.
 
-The bundled skill sources are kept under `skills/` for portability. Install or
-link them from the skill directory supported by your agent if you want automatic
-discovery. They expect a full ResearchLoop Kit checkout, locate templates from
-the project root, and do not embed separate prompt or template copies.
+Agent-specific skill packages are intentionally outside this public repository.
+Use `AGENTS.md` directly through the project-instruction mechanism supported by
+your agent.
 
 ## Quick Start
 
@@ -76,8 +73,8 @@ the project root, and do not embed separate prompt or template copies.
    bash scripts/verify.sh
    ```
 
-   This checks the framework's structure and publication safety. The
-   initialization and iteration skills enforce project-specific readiness.
+   This checks the framework's structure and publication safety. The completed
+   research brief and `AGENTS.md` contracts define project-specific readiness.
 
 ## Core Loop
 
@@ -164,11 +161,6 @@ research-loop-kit/
 |   |-- EVIDENCE_NOTE.template.md
 |   |-- EXPERIMENT_CARD.template.md
 |   `-- PROVENANCE.template.md
-|-- skills/
-|   |-- run-research-iteration/
-|   |   `-- SKILL.md
-|   `-- init-research-project/
-|       `-- SKILL.md
 |-- examples/
 |   `-- RESEARCH_BRIEF.example.md
 |-- state/
